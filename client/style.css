@@ -5,81 +5,113 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #333;
+    font-family: 'MS Sans Serif', 'Segoe UI', Arial, sans-serif;
+    background: #008080;
+    color: #000000;
     min-height: 100vh;
+    font-size: 11px;
 }
 
 .game-container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 20px auto;
+    padding: 0;
+    background: #c0c0c0;
+    border: 2px outset #c0c0c0;
 }
 
 header {
-    text-align: center;
-    margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: #000080;
+    color: #ffffff;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    border-bottom: 1px solid #808080;
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 4px;
+    width: 16px;
+    height: 14px;
+    background: #c0c0c0;
+    border: 1px outset #c0c0c0;
+    margin-top: 2px;
+}
+
+header::after {
+    content: '×';
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    color: #000000;
+    font-size: 10px;
+    font-weight: bold;
 }
 
 header h1 {
-    font-size: 2.5em;
-    color: #4a90e2;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 11px;
+    color: #ffffff;
+    margin: 0;
+    text-align: left;
+    text-shadow: none;
+    font-weight: bold;
 }
 
 .game-info {
+    background: #c0c0c0;
+    padding: 8px;
+    border: 2px inset #c0c0c0;
+    margin: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
 }
 
 .scores {
     display: flex;
-    gap: 30px;
-    font-size: 1.3em;
+    gap: 15px;
+    font-size: 11px;
     font-weight: bold;
+    color: #000000;
 }
 
 .player-score {
-    color: #2ecc71;
+    color: #000000;
 }
 
 .ai-score {
-    color: #e74c3c;
+    color: #000000;
 }
 
 .game-status {
     display: flex;
-    gap: 20px;
-    font-size: 1.1em;
+    gap: 15px;
+    font-size: 11px;
+    color: #000000;
 }
 
 .timer {
-    color: #f39c12;
+    color: #000000;
     font-weight: bold;
 }
 
 .role {
-    color: #8e44ad;
+    color: #000000;
     font-weight: bold;
 }
 
 .game-area {
     position: relative;
-    margin: 20px auto;
-    max-width: 800px;
-    background: #fff;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    margin: 4px;
+    background: #c0c0c0;
+    border: 2px inset #c0c0c0;
+    padding: 4px;
 }
 
 #gameCanvas {
@@ -87,6 +119,7 @@ header h1 {
     width: 100%;
     height: auto;
     background: linear-gradient(to bottom, #87ceeb 0%, #98fb98 100%);
+    border: 1px inset #808080;
 }
 
 .game-overlay {
@@ -95,7 +128,7 @@ header h1 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(192, 192, 192, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,115 +136,120 @@ header h1 {
 }
 
 .overlay-content {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
+    background: #c0c0c0;
+    border: 2px outset #c0c0c0;
+    padding: 16px;
     text-align: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
+    max-width: 300px;
     width: 90%;
 }
 
 .overlay-content h2 {
-    color: #4a90e2;
-    margin-bottom: 20px;
-    font-size: 2em;
+    color: #000000;
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .overlay-content p {
-    font-size: 1.3em;
-    margin-bottom: 30px;
-    color: #666;
+    font-size: 11px;
+    margin-bottom: 16px;
+    color: #000000;
 }
 
 #restartBtn {
-    background: linear-gradient(45deg, #4a90e2, #357abd);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.1em;
-    border-radius: 30px;
+    background: #c0c0c0;
+    color: #000000;
+    border: 2px outset #c0c0c0;
+    padding: 4px 12px;
+    font-size: 11px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    font-family: 'MS Sans Serif', 'Segoe UI', Arial, sans-serif;
 }
 
 #restartBtn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+    background: #d4d4d4;
+}
+
+#restartBtn:active {
+    border: 2px inset #c0c0c0;
 }
 
 .controls, .ai-info {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px;
-    border-radius: 15px;
-    margin: 20px 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: #c0c0c0;
+    padding: 8px;
+    border: 2px inset #c0c0c0;
+    margin: 4px;
 }
 
 .controls h3, .ai-info h3 {
-    color: #4a90e2;
-    margin-bottom: 15px;
-    font-size: 1.4em;
+    color: #000000;
+    margin-bottom: 8px;
+    font-size: 11px;
+    font-weight: bold;
 }
 
 .control-info {
     display: flex;
-    gap: 20px;
-    margin-bottom: 15px;
+    gap: 10px;
+    margin-bottom: 8px;
     flex-wrap: wrap;
 }
 
 .control-info span {
-    background: #f8f9fa;
-    padding: 8px 15px;
-    border-radius: 20px;
-    border: 2px solid #e9ecef;
-    font-weight: 500;
+    background: #c0c0c0;
+    padding: 2px 6px;
+    border: 1px outset #c0c0c0;
+    font-weight: normal;
+    font-size: 10px;
+    color: #000000;
 }
 
 .role-info p {
-    margin: 10px 0;
-    font-size: 1.1em;
+    margin: 4px 0;
+    font-size: 10px;
+    color: #000000;
 }
 
 .role-info em {
-    color: #8e44ad;
+    color: #000000;
     font-weight: bold;
+    font-style: normal;
 }
 
 #aiStatus {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
 }
 
 #aiStatus p {
-    background: #f8f9fa;
-    padding: 10px 15px;
-    border-radius: 10px;
-    border-left: 4px solid #4a90e2;
-    font-weight: 500;
+    background: #c0c0c0;
+    padding: 4px 6px;
+    border: 1px inset #c0c0c0;
+    font-weight: normal;
+    font-size: 10px;
+    color: #000000;
 }
 
 #aiStatus span {
-    color: #e74c3c;
+    color: #000000;
     font-weight: bold;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
     .game-container {
-        padding: 10px;
+        margin: 10px;
     }
     
     header h1 {
-        font-size: 2em;
+        font-size: 11px;
     }
     
     .game-info {
         flex-direction: column;
-        gap: 15px;
+        gap: 8px;
     }
     
     .scores, .game-status {
@@ -227,13 +265,7 @@ header h1 {
     }
 }
 
-/* Animation for role switch */
+/* Remove role switch animation to match Windows 95 style */
 .role-switch-animation {
-    animation: roleSwitch 0.5s ease-in-out;
-}
-
-@keyframes roleSwitch {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); background-color: #fff3cd; }
-    100% { transform: scale(1); }
+    /* No animation for Windows 95 style */
 }
