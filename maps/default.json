@@ -1,0 +1,79 @@
+{
+  "name": "Default Parkour Arena",
+  "width": 800,
+  "height": 600,
+  "platforms": [
+    {
+      "x": 0,
+      "y": 580,
+      "width": 800,
+      "height": 20,
+      "type": "ground",
+      "color": "#8B4513"
+    },
+    {
+      "x": 150,
+      "y": 480,
+      "width": 100,
+      "height": 20,
+      "type": "platform",
+      "color": "#8B4513"
+    },
+    {
+      "x": 350,
+      "y": 380,
+      "width": 100,
+      "height": 20,
+      "type": "platform",
+      "color": "#8B4513"
+    },
+    {
+      "x": 550,
+      "y": 480,
+      "width": 100,
+      "height": 20,
+      "type": "platform",
+      "color": "#8B4513"
+    },
+    {
+      "x": 250,
+      "y": 280,
+      "width": 150,
+      "height": 20,
+      "type": "high_platform",
+      "color": "#8B4513"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "width": 20,
+      "height": 600,
+      "type": "wall",
+      "color": "#654321"
+    },
+    {
+      "x": 780,
+      "y": 0,
+      "width": 20,
+      "height": 600,
+      "type": "wall",
+      "color": "#654321"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "width": 800,
+      "height": 20,
+      "type": "ceiling",
+      "color": "#654321"
+    }
+  ],
+  "spawns": {
+    "player": { "x": 700, "y": 500 },
+    "ai": { "x": 100, "y": 500 }
+  },
+  "starZones": [
+    { "x": 200, "y": 200, "width": 400, "height": 200 },
+    { "x": 100, "y": 400, "width": 600, "height": 100 }
+  ]
+}

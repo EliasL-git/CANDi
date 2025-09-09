@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANDi - 2D Parkour Tag Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>🏃 CANDi - Parkour Tag Game</h1>
+            <div class="game-info">
+                <div class="scores">
+                    <span class="player-score">Player: <span id="playerScore">0</span></span>
+                    <span class="ai-score">AI: <span id="aiScore">0</span></span>
+                </div>
+                <div class="game-status">
+                    <span class="timer">Time: <span id="gameTimer">30</span>s</span>
+                    <span class="role">Role: <span id="playerRole">Runner</span></span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            
+            <div class="game-overlay" id="gameOverlay" style="display: none;">
+                <div class="overlay-content">
+                    <h2 id="overlayTitle">Game Over</h2>
+                    <p id="overlayMessage">Winner: Player!</p>
+                    <button id="restartBtn" onclick="restartGame()">Play Again</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <h3>Controls:</h3>
+            <div class="control-info">
+                <span><strong>WASD:</strong> Move</span>
+                <span><strong>Space:</strong> Jump</span>
+                <span><strong>E:</strong> Climb</span>
+            </div>
+            <div class="role-info">
+                <p><strong>Runner:</strong> Collect stars to score points</p>
+                <p><strong>Chaser:</strong> Tag the opponent to score points</p>
+                <p><em>Roles switch at 5 points!</em></p>
+            </div>
+        </div>
+        
+        <div class="ai-info">
+            <h3>AI Status:</h3>
+            <div id="aiStatus">
+                <p>Exploration Rate: <span id="aiEpsilon">30%</span></p>
+                <p>Episodes: <span id="aiEpisodes">0</span></p>
+                <p>Learning: <span id="aiLearning">Active</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

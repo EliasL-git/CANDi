@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
+}
+
+.game-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #4a90e2;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.scores {
+    display: flex;
+    gap: 30px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.player-score {
+    color: #2ecc71;
+}
+
+.ai-score {
+    color: #e74c3c;
+}
+
+.game-status {
+    display: flex;
+    gap: 20px;
+    font-size: 1.1em;
+}
+
+.timer {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.role {
+    color: #8e44ad;
+    font-weight: bold;
+}
+
+.game-area {
+    position: relative;
+    margin: 20px auto;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+#gameCanvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to bottom, #87ceeb 0%, #98fb98 100%);
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.overlay-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+}
+
+.overlay-content h2 {
+    color: #4a90e2;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.overlay-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+#restartBtn {
+    background: linear-gradient(45deg, #4a90e2, #357abd);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+#restartBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+}
+
+.controls, .ai-info {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.controls h3, .ai-info h3 {
+    color: #4a90e2;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.control-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.control-info span {
+    background: #f8f9fa;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 2px solid #e9ecef;
+    font-weight: 500;
+}
+
+.role-info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.role-info em {
+    color: #8e44ad;
+    font-weight: bold;
+}
+
+#aiStatus {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+#aiStatus p {
+    background: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border-left: 4px solid #4a90e2;
+    font-weight: 500;
+}
+
+#aiStatus span {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .game-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .scores, .game-status {
+        justify-content: center;
+    }
+    
+    .control-info {
+        justify-content: center;
+    }
+    
+    #aiStatus {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animation for role switch */
+.role-switch-animation {
+    animation: roleSwitch 0.5s ease-in-out;
+}
+
+@keyframes roleSwitch {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); background-color: #fff3cd; }
+    100% { transform: scale(1); }
+}
