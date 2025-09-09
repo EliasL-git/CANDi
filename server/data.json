@@ -1,0 +1,29 @@
+{
+  "q_table": {
+    "chaser_target_right_close": {
+      "up": 0.2,
+      "down": -0.1,
+      "left": -0.5,
+      "right": 1.0,
+      "jump": 0.1
+    },
+    "chaser_target_left_close": {
+      "up": 0.2,
+      "down": -0.1,
+      "left": 1.0,
+      "right": -0.5,
+      "jump": 0.1
+    },
+    "runner_target_right_far": {
+      "up": -0.2,
+      "down": 0.0,
+      "left": -0.1,
+      "right": 0.8,
+      "jump": 0.3
+    }
+  },
+  "episodes": 0,
+  "epsilon": 0.3,
+  "learning_rate": 0.1,
+  "discount_factor": 0.9
+}
