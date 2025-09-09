@@ -2,7 +2,7 @@
 
 A 2D parkour tag game where you compete against an AI that learns from your movement patterns using reinforcement learning (Q-learning).
 
-![CANDi Game Screenshot](https://github.com/user-attachments/assets/464c9ba0-9db8-4666-aadc-10e6384fa394)
+![CANDi Game Screenshot](https://github.com/user-attachments/assets/a3ac15d3-ac58-4715-8085-a4ed796d86b5)
 
 ## 🎮 Game Features
 
